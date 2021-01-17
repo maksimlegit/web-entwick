@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Khula:wght@300;400;600;700;800&family=Rock+Salt&family=Rye&family=Shrikhand&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="section">
+        <div class="header__p1">
+          <img src="img/web.svg" class="web" alt="">
+        </div>
+        <h1 class="header__h1">
+          <span class="ent">Ent</span>
+          <span class="wick">wick</span>
+          <span class="ler">ler</span>
+        </h1>
+        <p class="header__p2">ich suche job als</p>
+        <div class="call">
+          <a href="tel:+74 24334434" class="call-t">+74 24334434</a>
+        </div>
+      </div>
+    </header>
+  </div>
+    
+  <script src="anime.min.js"></script>
+  <script>
+    var web = document.querySelectorAll('.web');
+    var ent = document.querySelectorAll('.ent');
+    var wick = document.querySelectorAll('.wick');
+    var ler = document.querySelectorAll('.ler');
+
+    anime({
+      targets: web,
+      rotateY:360,
+      perspective:100,
+      delay: 1000,
+      duration: 9000,
+      loop:true,
+      endDelay: 90,
+    });
+
+    anime({
+      targets: ent,
+      translateX: -2000,
+      direction: 'alternate',
+      easing: 'easeInOutSine',
+      delay: 3000,
+      duration: 1000,
+      loop:true,
+      endDelay: 900,
+    });
+
+    anime({
+      targets: wick,
+      translateY: -2000,
+      translateX: 10,
+      direction: 'alternate',
+      loop: true,
+      delay: 3000,
+      duration: 1000,
+      loop:true,
+      endDelay: 900,
+    });
+
+    anime({
+      targets: ler,
+      translateY: -30,
+      translateX: 2000,
+      direction: 'alternate',
+      loop: true,
+      delay: function(el, i, l) {
+        return i * 100;
+      },
+      endDelay: function(el, i, l) {
+        return (l - i) * 100;
+      },
+      delay: 3000,
+      duration: 1000,
+      loop:true,
+      endDelay: 900,
+    });
+  </script>
+</body>
+
+</html>
